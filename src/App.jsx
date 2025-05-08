@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { HashRouter as Router, Route, Routes } from "react-router-dom"; // HashRouter, Route ve Routes'ı içeri aktarıyoruz
 import "./App.scss";
 import Header from "./components/header/Header";
 import Search from "./components/search/Search";
@@ -17,11 +18,13 @@ function App() {
         );
 
   return (
-    <div className="container">
-      <Header />
-      <Search search={search} setSearch={setSearch} />
-      <CardContainer data={filteredData} />
-    </div>
+    <Router> 
+      <div className="container">
+        <Header />
+        <Search search={search} setSearch={setSearch} />
+        <CardContainer data={filteredData} />
+      </div>
+    </Router>
   );
 }
 
